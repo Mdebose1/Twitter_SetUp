@@ -1,0 +1,24 @@
+<%- include('../partials/header.ejs') %>
+
+<!-- Content goes here -->
+
+<h1><%= name %></h1>
+<p>Favorite color: <%= favoriteColor %></p>
+<hr>
+<h2>Post</h2>
+<% for (const post of posts) { %>
+    <% if (!post.hide) { %>
+    <div class="card mb-2">
+        <div class="card-header">
+            <%= post.title %>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <%= post.content %>
+            </p>
+        </div>
+    </div>
+    <% } %>
+<% } %>
+
+<%- include('../partials/footer.ejs') %>
